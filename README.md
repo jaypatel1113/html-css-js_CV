@@ -1,2 +1,7 @@
+<pre>
 # responsive-resume
-using HTML, CSS &amp; JS 
+
+Website is successfully hosted 
+
+<h1><a href="https://jaypatel3382.github.io/responsive-resume/" target="_blank">Click here to See the Resume</a></h1>
+</pre>
