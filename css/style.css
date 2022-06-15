@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+*::selection {
+    background: rgb(92, 255, 42);
+    color: navy
+}
+body {
+    background: #add8e6;
+    /* background: #323840; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.light {
+    position: relative;
+    width: 100%;
+    min-height: 1000px;
+    max-width: 1000px;
+    margin: 50px;
+    background: #add8e6;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0px 35px 55px rgba(0, 0, 0, 0.1);
+	border-radius: 50px;
+}
+.light .down {
+    position: absolute;
+    top: -20px;
+    left: -6px;
+    background: #ddf0ff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1000ms;
+}
+.dark .down {
+    background: #323840;
+}
+.light .down .fas{
+    color: #03a9f4;
+}
+.dark .down .fas{
+    color: #fff;
+}
+.light .down a:visited {
+    color: #03a9f4;
+}
+.light .left {
+    position: relative;
+    background: #003147;
+    padding: 40px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transition: 1000ms;
+}
+.dark .left {
+    background: #222;
+}
+.profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark .profile {
+    border-bottom: 1px solid rgba(15, 14, 14, 0.6);
+}
+.profile .pic {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile .pic img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile h2 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+.dark .profile h2 {
+    color: rgb(199, 199, 199);
+}
+.profile h2 span {
+    font-size: 0.8em;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: rgb(0, 102, 255);
+}
+.dark .profile h2 span {
+    color: rgb(255, 96, 96);
+}
+.contact {
+    padding-top: 40px;
+}
+.title {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.dark .title {
+    color: rgb(131, 131, 131);
+}
+.contact ul {
+    position: relative;
+}
+.contact ul li {
+    position: relative;
+    margin: 10px 0px;
+    cursor: pointer;
+    list-style: none;
+}
+.contact ul li .icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+}
+.dark .contact ul li .icon {
+    color: rgb(255, 96, 96);
+}
+.contact ul li span {
+    color: #fff;
+    font-weight: 300px;
+}
+.dark .contact ul li span {
+    color: rgb(199, 199, 199);
+}
+.contact ul li span a {
+    color: #fff;
+    font-weight: 300px;
+    text-decoration: none;
+}
+.dark .contact ul li span a {
+    color: rgb(199, 199, 199);
+}
+.education li {
+    margin-bottom: 15px;
+}
+.education h5 {
+    color: #03a9f4;
+    font-weight: 500px;
+    margin-top: 19px;
+}
+.dark .education h5 {
+    color: rgb(255, 96, 96);
+}
+.education h4 {
+    color: #fff;
+    font-weight: 300px;
+    margin-top: 9px;
+}
+.dark .education h4 {
+    color: rgb(199, 199, 199);
+}
+h4.flt {
+    color: #03a9f4;
+    float: right;
+    font-weight: bolder;
+}
+.dark h4.flt {
+    color: rgb(182, 65, 90);
+}
+.lang .per {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+    border-radius: 10px;
+    transition: 1000ms;
+}
+.dark .lang .per {
+    background: #333;
+}
+.lang .per div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+    border-radius: 10px;
+    transition: 1000ms;
+}
+.dark .lang .per div {
+    background: rgb(182, 65, 90);
+}
+
+
+.light .right {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: 1000ms;
+}
+.dark .right {
+    background: #111;
+}
+.right .toggle1, .left .toggle2 {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    background: #444;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: content 1000ms;
+}
+.left .toggle2 {
+    right: 30px;
+    top: 27px;
+    display: none;
+}
+.dark .right .toggle1, .dark .left .toggle2 {
+    background: #eee;
+    transition: content 1000ms;
+}
+.right .toggle1:before, .left .toggle2:before {
+    content: '\f186';
+    font-weight: 900;
+    font-family: "fontAwesome";
+    color: #fff;
+    transition: 1000ms;
+}
+.dark .right .toggle1:before, .dark .left .toggle2:before {
+    content: '\f185';
+    color: #111;
+    font-weight: 900;
+}
+.about {
+    margin-bottom: 50px;
+}
+.about:last-child {
+    margin-bottom: 0;    
+}
+.title2 {
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.dark .title2 {
+    color: #eee;
+}
+p {
+    color: #333;
+    text-align: justify;
+}
+.dark p {
+    color: #aaa;
+}
+.about .box {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about .box .years {
+    min-width: 150px;
+}
+.about .box .years h5 {
+    text-transform: uppercase;
+    color: #848c90;
+    font-weight: 600;
+}
+.dark .about .box .years h5 {
+    color: #999;
+}
+.about .box .text h4 {
+    text-transform: uppercase;
+    color: #2a7da2;
+    font-size: 16px;
+    text-align: justify;
+}
+.dark .about .box .text h4 {
+    color: rgb(255, 176, 176);
+}
+.about .box .text h4 span {
+    color: rgb(0, 24, 131);
+}
+.dark .about .box .text h4 span {
+    color: rgb(179, 84, 88);
+}
+.skills .box {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr 50px;
+    justify-content: center;
+    align-items: center;
+}
+.skills .box  h4 {
+    text-transform: uppercase;
+    color: #848c99;
+    font-weight: 900;
+}
+.dark .skills .box  h4 {
+    color: #aaa;
+}
+span.flt2 {
+    position: absolute;
+    top :-5px;
+    right: -45px; 
+    color: #03a9f4;
+    font-weight: bolder;
+}
+.dark span.flt2 {
+    color: rgb(182, 65, 90);
+}
+.skills .box .per {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    transition: 1000ms;
+}
+.dark .skills .box .per {
+    background: #414141;
+}
+.skills .box .per div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+    border-radius: 20px;
+    transition: 1000ms;
+}
+.dark .skills .box .per div {
+    background: rgb(182, 65, 90);
+}
+.hobbies ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.hobbies ul li {
+    list-style: none;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.dark .hobbies ul li {
+    color: #bbb;
+}
+.hobbies ul li .fas {
+    color: #03a9fa;
+    font-size: 18px;
+    width: 24px;
+}
+.dark .hobbies ul li .fas {
+    color: rgb(255, 96, 96);
+}
+sup {
+    text-transform: lowercase;
+}
+
+@media (max-width: 1000px) {
+    .right .toggle1 {
+        display: none;
+    }
+    .left .toggle2 {
+        display: grid;
+        place-items: center;
+    }
+    .light {
+        margin: 30px;
+        grid-template-columns: 1fr;
+    }
+    .light .left {
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 0px;
+    }
+    .left .down {
+        top: -13px;
+    }
+    .light .right {
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
+    .right .toggle {
+        top: -1195px;
+    }
+    .hobbies ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .about .box {
+        flex-direction: column;
+    }
+    .about .box .years {
+        min-width: 150px;
+        margin-bottom: 9px;
+    }
+    .skills .box .per {
+        width: 90%;
+    }
+    .hobbies ul {
+        grid-template-columns: 1fr;
+    }
+    .skills .box {
+        grid-template-columns: 1fr;
+    }
+    .skills .box  h4 {
+        margin-bottom: 5px;
+    }
+}
