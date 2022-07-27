@@ -138,6 +138,7 @@ body {
     width: 30px;
     font-size: 18px;
     color: #03a9f4;
+    animation: scaling 1s linear infinite alternate;
 }
 .dark .contact ul li .icon {
     color: rgb(255, 96, 96);
@@ -198,15 +199,27 @@ h4.flt {
     background: #333;
 }
 .lang .per div {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     height: 100%;
-    background: #03a9f4;
+    background: transparent;
     border-radius: 10px;
     transition: 1000ms;
 }
-.dark .lang .per div {
+.lang .per div::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #03a9f4;
+    animation: inc 1s linear infinite alternate, animate 1s 3s ease-in-out;
+}
+.dark .lang .per div::after {
     background: rgb(182, 65, 90);
 }
 
@@ -235,6 +248,7 @@ h4.flt {
     align-items: center;
     cursor: pointer;
     transition: content 1000ms;
+    z-index: 999;
 }
 .left .toggle2 {
     right: 30px;
@@ -251,11 +265,13 @@ h4.flt {
     font-family: "fontAwesome";
     color: #fff;
     transition: 1000ms;
+    animation: scaling 1s linear infinite alternate;
 }
 .dark .right .toggle1:before, .dark .left .toggle2:before {
     content: '\f185';
     color: #111;
     font-weight: 900;
+    animation: scaling 1s linear infinite alternate;
 }
 .about {
     margin-bottom: 50px;
@@ -279,13 +295,18 @@ p {
 .dark p {
     color: #aaa;
 }
+.marmar {
+    margin-top: 20px;
+}
 .about .box {
-    display: flex;
-    flex-direction: row;
-    margin: 20px 0;
+    margin: 0 0 15px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    /* margin-bottom: 15px; */
 }
 .about .box .years {
-    min-width: 150px;
+    min-width: 100px;
 }
 .about .box .years h5 {
     text-transform: uppercase;
@@ -295,21 +316,46 @@ p {
 .dark .about .box .years h5 {
     color: #999;
 }
-.about .box .text h4 {
+
+.about .box .topic,
+.about .box .links,
+.about .box .langs {
     text-transform: uppercase;
+    font-size: 12px;
+    display: inline-block;
+    min-width: 250px;
     color: #2a7da2;
-    font-size: 16px;
-    text-align: justify;
+    font-weight: 900;
 }
-.dark .about .box .text h4 {
+.dark .about .box .topic {
     color: rgb(255, 176, 176);
 }
-.about .box .text h4 span {
-    color: rgb(0, 24, 131);
+.about .box .langs {
+    display: inline-block;
+    min-width: 150px;
+    color: #03a9f4;
 }
-.dark .about .box .text h4 span {
-    color: rgb(179, 84, 88);
+.dark .about .box .langs {
+    color: rgb(182, 65, 90);
 }
+.about .box .links {
+    display: inline-block;
+    min-width: 65px;
+    text-align: right;
+}
+.about .box .links a {
+    font-size: 17px;
+    margin:-5px 0 0 8px;
+    color: #03a9f4;
+}
+.dark .about .box .links a {
+    color: rgb(182, 65, 90);
+}
+.about .box .links a .fab {
+    animation: scaling 1s linear infinite alternate;
+}
+
+
 .skills .box {
     position: relative;
     width: 100%;
@@ -352,13 +398,43 @@ span.flt2 {
     top: 0;
     left: 0;
     height: 100%;
-    background: #03a9f4;
+    background: transparent;
     border-radius: 20px;
     transition: 1000ms;
+    width: calc(1% * var(--i));
 }
-.dark .skills .box .per div {
+.skills .box .per div::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #03a9f4;
+    animation: inc 1s linear infinite alternate, animate 1s 3s ease-in-out;
+}
+.dark .skills .box .per div::after {
     background: rgb(182, 65, 90);
 }
+
+/* @keyframes animate {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes inc {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 101%;
+    }
+} */
 .hobbies ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -377,12 +453,24 @@ span.flt2 {
     font-size: 18px;
     width: 24px;
 }
+.fas {
+    animation: scaling 1s linear infinite alternate;
+}
 .dark .hobbies ul li .fas {
     color: rgb(255, 96, 96);
 }
 sup {
     text-transform: lowercase;
 }
+
+/* @keyframes scaling {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+} */
 
 @media (max-width: 1000px) {
     .right .toggle1 {
@@ -415,14 +503,20 @@ sup {
     }
 }
 @media (max-width: 600px) {
-    .about .box {
+    /* .about .box {
         flex-direction: column;
     }
     .about .box .years {
         min-width: 150px;
         margin-bottom: 9px;
+    } */
+    .about .box .topic,
+    .about .box .links,
+    .about .box .langs {
+        font-size: 12px;
+        min-width: 150px;
     }
-    .skills .box .per {
+        .skills .box .per {
         width: 90%;
     }
     .hobbies ul {
