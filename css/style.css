@@ -185,15 +185,19 @@ h4.flt {
 .dark h4.flt {
     color: rgb(182, 65, 90);
 }
+.lang ul li {
+    margin: 15px 0;
+}
 .lang .per {
     position: relative;
     width: 100%;
     height: 5px;
     background: #081921;
     display: block;
-    margin-top: 5px;
     border-radius: 10px;
+    margin: 8px 0;
     transition: 1000ms;
+    /* margin-bottom: 10px; */
 }
 .dark .lang .per {
     background: #333;
@@ -222,8 +226,6 @@ h4.flt {
 .dark .lang .per div::after {
     background: rgb(182, 65, 90);
 }
-
-
 .light .right {
     position: relative;
     background: #fff;
@@ -299,31 +301,30 @@ p {
     margin-top: 20px;
 }
 .about .box {
-    margin: 0 0 15px 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    /* margin-bottom: 15px; */
+    margin: 20px 0;
 }
-.about .box .years {
-    min-width: 100px;
+.about .box1 {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    margin: 0 0 15px 0;
+    align-items: center;
+    grid-template-columns: 2fr 6fr 4fr 2fr;
 }
 .about .box .years h5 {
     text-transform: uppercase;
     color: #848c90;
     font-weight: 600;
+    font-size: 14px;
 }
 .dark .about .box .years h5 {
     color: #999;
 }
-
 .about .box .topic,
 .about .box .links,
 .about .box .langs {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
-    min-width: 250px;
     color: #2a7da2;
     font-weight: 900;
 }
@@ -332,7 +333,6 @@ p {
 }
 .about .box .langs {
     display: inline-block;
-    min-width: 150px;
     color: #03a9f4;
 }
 .dark .about .box .langs {
@@ -340,12 +340,11 @@ p {
 }
 .about .box .links {
     display: inline-block;
-    min-width: 65px;
     text-align: right;
 }
 .about .box .links a {
     font-size: 17px;
-    margin:-5px 0 0 8px;
+    margin: -5px 0 0 8px;
     color: #03a9f4;
 }
 .dark .about .box .links a {
@@ -354,8 +353,6 @@ p {
 .about .box .links a .fab {
     animation: scaling 1s linear infinite alternate;
 }
-
-
 .skills .box {
     position: relative;
     width: 100%;
@@ -399,6 +396,7 @@ span.flt2 {
     left: 0;
     height: 100%;
     background: transparent;
+    background: #03a9f4;
     border-radius: 20px;
     transition: 1000ms;
     width: calc(1% * var(--i));
@@ -418,23 +416,6 @@ span.flt2 {
 .dark .skills .box .per div::after {
     background: rgb(182, 65, 90);
 }
-
-/* @keyframes animate {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 100%;
-    }
-}
-@keyframes inc {
-    0% {
-        width: 100%;
-    }
-    100% {
-        width: 101%;
-    }
-} */
 .hobbies ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -463,14 +444,32 @@ sup {
     text-transform: lowercase;
 }
 
-/* @keyframes scaling {
+
+@keyframes animate {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes inc {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 101%;
+    }
+}
+@keyframes scaling {
     0% {
         transform: scale(0.9);
     }
     100% {
         transform: scale(1.05);
     }
-} */
+}
+
 
 @media (max-width: 1000px) {
     .right .toggle1 {
@@ -479,6 +478,9 @@ sup {
     .left .toggle2 {
         display: grid;
         place-items: center;
+    }
+    .light .right {
+        padding: 40px;
     }
     .light {
         margin: 30px;
@@ -503,20 +505,19 @@ sup {
     }
 }
 @media (max-width: 600px) {
-    /* .about .box {
-        flex-direction: column;
-    }
-    .about .box .years {
-        min-width: 150px;
-        margin-bottom: 9px;
-    } */
     .about .box .topic,
     .about .box .links,
     .about .box .langs {
         font-size: 12px;
-        min-width: 150px;
     }
-        .skills .box .per {
+    .about .box .langs,
+    .about .box .topic {
+        margin-left: 15px;
+    }
+    .about .box1 {
+        grid-template-columns: 2fr 5fr 4fr 3fr;
+    }
+    .skills .box .per {
         width: 90%;
     }
     .hobbies ul {
