@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: Calibri; */
+    font-family: 'Poppins', sans-serif;
 }
 *::selection {
     background: rgb(92, 255, 42);
@@ -163,7 +165,7 @@ body {
 }
 .education h5 {
     color: #03a9f4;
-    font-weight: 500px;
+    font-weight: 600;
     margin-top: 19px;
 }
 .dark .education h5 {
@@ -171,7 +173,7 @@ body {
 }
 .education h4 {
     color: #fff;
-    font-weight: 300px;
+    font-weight: 400;
     margin-top: 9px;
 }
 .dark .education h4 {
@@ -213,9 +215,9 @@ h4.flt {
 }
 .lang .per div::after {
     content: '';
-    position: relative;
+    position: absolute;
     display: inline-block;
-    top: -10px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -293,6 +295,7 @@ h4.flt {
 p {
     color: #333;
     text-align: justify;
+    font-weight: 500;
 }
 .dark p {
     color: #aaa;
@@ -326,7 +329,7 @@ p {
     font-size: 14px;
     display: inline-block;
     color: #2a7da2;
-    font-weight: 900;
+    font-weight: 700;
 }
 .dark .about .box .topic {
     color: rgb(255, 176, 176);
@@ -361,10 +364,10 @@ p {
     justify-content: center;
     align-items: center;
 }
-.skills .box  h4 {
+.skills .box h4 {
     text-transform: uppercase;
     color: #848c99;
-    font-weight: 900;
+    font-weight: 600;
 }
 .dark .skills .box  h4 {
     color: #aaa;
@@ -391,21 +394,20 @@ span.flt2 {
     background: #414141;
 }
 .skills .box .per div {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     height: 100%;
     background: transparent;
-    background: #03a9f4;
     border-radius: 20px;
     transition: 1000ms;
     width: calc(1% * var(--i));
 }
 .skills .box .per div::after {
     content: '';
-    position: relative;
+    position: absolute;
     display: inline-block;
-    top: -5px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -443,6 +445,41 @@ span.flt2 {
 sup {
     text-transform: lowercase;
 }
+.btnprt {
+    position: relative;
+    right: 0;
+    /* top: -25px; */
+    width: 100%;
+    text-align: end;
+}
+.btnprt .btnbtn{
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    color: #03a9fa;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #03a9fa;
+    transition: 500ms;
+    overflow: hidden;
+}
+
+
+.btnprt:hover a{
+    background: #03a9fa;
+    color: #fff;
+}
+.dark .btnprt a {
+    color: rgb(255, 96, 96);
+    border: 2px solid rgb(255, 96, 96);
+}
+.dark .btnprt:hover a {
+    background: rgb(255, 96, 96);
+    color: #fff;
+}
+
 
 
 @keyframes animate {
