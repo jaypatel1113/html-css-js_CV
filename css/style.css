@@ -487,10 +487,12 @@ sup {
 }
 .btnprt {
     position: fixed;
-    top: 30px;
-    right: 30px;
-    /* width: 100%; */
+    top: 20px;
+    right: 20px;
     text-align: end;
+}
+.btnprt2 {
+    top: 70px;
 }
 .btnprt .btnbtn{
     position: relative;
@@ -504,6 +506,7 @@ sup {
     border: 2px solid #03a9fa;
     transition: 500ms;
     overflow: hidden;
+    width: 215px;
 }
 .btnprt:hover a{
     background: #03a9fa;
@@ -579,6 +582,9 @@ sup {
     }
 }
 @media (max-width: 600px) {
+    .light {
+        margin-top: 150px;
+    }
     .about .box .topic,
     .about .box .links,
     .about .box .langs {
@@ -599,5 +605,14 @@ sup {
     }
     .skills .box {
         grid-template-columns: 1fr;
+    }
+    .btnprt {
+        position: absolute;
+        left: 50%;
+        right: unset;
+        transform: translateX(-50%);
+    }
+    .btnprt2 {
+        top: 80px;
     }
 }
